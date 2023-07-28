@@ -33,6 +33,7 @@ function buildUserDataScript(githubRegistrationToken, label) {
 }
 
 async function startEc2Instance(label, githubRegistrationToken) {
+  core.info('In rachit & jatans AWS EC2 start function')
   const ec2 = new AWS.EC2();
 
   const userData = buildUserDataScript(githubRegistrationToken, label);
@@ -51,6 +52,8 @@ async function startEc2Instance(label, githubRegistrationToken) {
       Enabled: true,
     },
   };
+
+  core.info('In rachit & jatans AWS EC2 start function')
 
   try {
     const result = await ec2.runInstances(params).promise();
