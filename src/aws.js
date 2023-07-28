@@ -53,7 +53,7 @@ async function startEc2Instance(label, githubRegistrationToken) {
     },
   };
 
-  core.info('In rachit & jatans AWS EC2 start function')
+  core.info('----- In rachit & jatans AWS EC2 start function, enable enclave options')
 
   try {
     const result = await ec2.runInstances(params).promise();
